@@ -1,0 +1,56 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0B132B;
+}
+::-webkit-scrollbar-thumb {
+    background: #FBBF24;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #D97706;
+}
+
+/* Custom styles for horizontal slider scrollbar */
+#gallery-slider::-webkit-scrollbar {
+    height: 6px;
+}
+#gallery-slider::-webkit-scrollbar-track {
+    background: rgba(28, 37, 65, 0.4);
+}
+#gallery-slider::-webkit-scrollbar-thumb {
+    background: rgba(251, 191, 38, 0.3);
+    border-radius: 9999px;
+}
+#gallery-slider::-webkit-scrollbar-thumb:hover {
+    background: rgba(251, 191, 38, 0.6);
+}
+
+/* Gear 5 Ambient Cloud Animation */
+@keyframes floatClouds {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(3deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.nika-cloud {
+    animation: floatClouds 6s ease-in-out infinite;
+}
+
+/* Card hover scaling adjustments */
+.scale-on-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.scale-on-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
