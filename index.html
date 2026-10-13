@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deni Kurniawan | Professional Portfolio</title>
+    <title>Deni Kurniawan | Full-Stack Developer & Information Systems Analyst</title>
+    <meta name="description" content="Portfolio profesional Deni Kurniawan — Full-Stack Developer, Information Systems Analyst, dan Public Speaker. Berpengalaman di PHP, Power BI, Python, dan sistem informasi bisnis.">
+    <meta property="og:title" content="Deni Kurniawan | Developer & IS Analyst">
+    <meta property="og:description" content="Portfolio profesional seorang programmer dan analyst berbakat dari UMK Kudus.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -18,180 +27,546 @@
                     },
                     fontFamily: {
                         outfit: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-nikaDark text-slate-100 font-outfit overflow-x-hidden selection:bg-nikaGold selection:text-nikaDark">
+<body class="bg-nikaDark text-slate-100 font-outfit overflow-x-hidden">
 
-    <!-- Ambient background light effects (Nika Spirit) -->
-    <div class="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-nikaGold/10 blur-[120px] pointer-events-none z-0"></div>
-    <div class="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-nikaRed/10 blur-[120px] pointer-events-none z-0"></div>
+    <!-- =============================================
+         LOADING SCREEN
+         ============================================= -->
+    <div id="loading-screen">
+        <div style="text-align:center">
+            <div class="loader-logo">DENI KURNIAWAN</div>
+            <div class="loader-subtitle">Developer &amp; Information Systems Analyst</div>
+            <div class="loader-bar-wrapper">
+                <div class="loader-bar" id="loader-bar"></div>
+            </div>
+            <div class="loader-dots">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
 
-    <!-- Navigation Header -->
-    <header class="fixed top-0 w-full z-50 bg-nikaDark/80 backdrop-blur-md border-b border-slate-800">
+    <!-- Ambient background lights -->
+    <div class="ambient-light ambient-light-1"></div>
+    <div class="ambient-light ambient-light-2"></div>
+
+    <!-- =============================================
+         NAVIGATION HEADER
+         ============================================= -->
+    <header id="main-header">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-extrabold tracking-tighter text-white hover:text-nikaGold transition flex items-center gap-2">
-                <span class="bg-gradient-to-r from-nikaGold to-orange-500 text-transparent bg-clip-text">DENI KURNIAWAN</span>
+            <a href="#home" class="text-xl font-extrabold tracking-tight flex items-center gap-2 text-gradient">
+                DENI KURNIAWAN
             </a>
-            <nav class="hidden md:flex items-center space-x-8 font-medium">
-                <a href="#home" class="hover:text-nikaGold transition-colors duration-200">Home</a>
-                <a href="#experience" class="hover:text-nikaGold transition-colors duration-200">Experience</a>
-                <a href="#organization" class="hover:text-nikaGold transition-colors duration-200">Organization</a>
-                <a href="#skills" class="hover:text-nikaGold transition-colors duration-200">Soft Skills</a>
-                <a href="#achievements" class="hover:text-nikaGold transition-colors duration-200">Achievements</a>
-                <span class="text-slate-600">|</span>
+            <nav class="hidden md:flex items-center space-x-7">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#skills-tech" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#organization" class="nav-link">Organization</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
+                <span class="text-slate-700">|</span>
                 <div class="flex gap-4">
-                    <a href="https://github.com/denikurniii3" target="_blank" class="text-xl hover:text-nikaGold transition-colors duration-200" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/deni-kurniawan-5bb5b8378" target="_blank" class="text-xl hover:text-nikaGold transition-colors duration-200" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/denikurniii3" target="_blank" class="text-slate-400 hover:text-nikaGold transition-colors text-xl" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/deni-kurniawan-5bb5b8378" target="_blank" class="text-slate-400 hover:text-nikaGold transition-colors text-xl" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </nav>
             <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle Menu">
-                <i class="fa-solid fa-bars text-white"></i>
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none text-slate-300" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
         <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-nikaNavy border-t border-slate-800 px-6 py-4 space-y-4">
-            <a href="#home" class="block hover:text-nikaGold transition-colors py-2">Home</a>
-            <a href="#experience" class="block hover:text-nikaGold transition-colors py-2">Experience</a>
-            <a href="#organization" class="block hover:text-nikaGold transition-colors py-2">Organization</a>
-            <a href="#skills" class="block hover:text-nikaGold transition-colors py-2">Soft Skills</a>
-            <a href="#achievements" class="block hover:text-nikaGold transition-colors py-2">Achievements</a>
-            <div class="flex gap-4 pt-2 border-t border-slate-800">
-                <a href="https://github.com/denikurniii3" target="_blank" class="text-2xl hover:text-nikaGold transition-colors"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/deni-kurniawan-5bb5b8378" target="_blank" class="text-2xl hover:text-nikaGold transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/denikurniii/?hl=en" target="_blank" class="text-2xl hover:text-nikaGold transition-colors"><i class="fa-brands fa-instagram"></i></a>
+        <div id="mobile-menu" class="hidden md:hidden bg-nikaDark/95 border-t border-slate-800 px-6 py-4 space-y-3">
+            <a href="#home" class="block py-2 text-slate-300 hover:text-nikaGold transition-colors font-medium">Home</a>
+            <a href="#skills-tech" class="block py-2 text-slate-300 hover:text-nikaGold transition-colors font-medium">Skills</a>
+            <a href="#projects" class="block py-2 text-slate-300 hover:text-nikaGold transition-colors font-medium">Projects</a>
+            <a href="#experience" class="block py-2 text-slate-300 hover:text-nikaGold transition-colors font-medium">Experience</a>
+            <a href="#organization" class="block py-2 text-slate-300 hover:text-nikaGold transition-colors font-medium">Organization</a>
+            <a href="#achievements" class="block py-2 text-slate-300 hover:text-nikaGold transition-colors font-medium">Achievements</a>
+            <div class="flex gap-5 pt-3 border-t border-slate-800">
+                <a href="https://github.com/denikurniii3" target="_blank" class="text-2xl text-slate-400 hover:text-nikaGold transition-colors"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/deni-kurniawan-5bb5b8378" target="_blank" class="text-2xl text-slate-400 hover:text-nikaGold transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/denikurniii/?hl=en" target="_blank" class="text-2xl text-slate-400 hover:text-nikaGold transition-colors"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-24 px-6 relative z-10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <!-- =============================================
+         HERO SECTION
+         ============================================= -->
+    <section id="home" class="relative pt-32 pb-24 px-6 overflow-hidden">
+        <!-- Floating particles bg -->
+        <div class="particles-container" id="particles-bg"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
             <!-- Text Content -->
             <div class="lg:col-span-7 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-nikaGold/10 border border-nikaGold/25 text-nikaGold text-xs font-semibold uppercase tracking-wider mb-6">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-nikaGold opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-nikaGold"></span>
-                    </span>
+                <!-- Badge -->
+                <div class="hero-badge mb-6 mx-auto lg:mx-0 w-fit reveal">
+                    <span class="ping-dot"></span>
                     Available for Projects &amp; Collaboration
                 </div>
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white mb-6">
-                    Hi, I'm <span class="bg-gradient-to-r from-nikaGold via-orange-400 to-nikaRed text-transparent bg-clip-text">Deni Kurniawan</span>
+
+                <!-- Name -->
+                <h1 class="text-5xl md:text-7xl font-black leading-none text-white mb-4 reveal stagger-1">
+                    Hi, I'm<br>
+                    <span class="text-gradient">Deni Kurniawan</span>
                 </h1>
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-300 mb-6">
-                    Information Systems Analyst & Public Speaker
-                </h2>
-                <p class="text-lg text-slate-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                    An active Information Systems student combining professional diligence from corporate internships at <strong class="text-nikaGold">PT. Bank Rakyat Indonesia</strong> with active public speaking roles and organization leadership. Passionate about systems analysis, dynamic collaboration, and creative problem solving.
+
+                <!-- Role Typewriter -->
+                <div class="text-xl md:text-2xl font-bold text-slate-300 mb-6 h-10 overflow-hidden reveal stagger-2">
+                    <span id="typewriter-text" class="font-mono text-nikaGold"></span><span id="typewriter-cursor" class="text-nikaGold animate-pulse">|</span>
+                </div>
+
+                <!-- Description -->
+                <p class="text-base md:text-lg text-slate-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed reveal stagger-3">
+                    Mahasiswa Sistem Informasi yang memiliki passion sebagai <strong class="text-slate-200">Full-Stack Developer</strong> dan <strong class="text-nikaGold">Data Analyst</strong>. Berpengalaman magang di <strong class="text-nikaGold">PT. Bank Rakyat Indonesia</strong>, aktif berorganisasi, dan memiliki kemampuan Public Speaking profesional.
                 </p>
-                <!-- Quick Contact Info -->
-                <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
-                    <span class="flex items-center gap-2 px-4 py-2 bg-nikaNavy/60 border border-slate-800 rounded-xl text-sm">
-                        <i class="fa-solid fa-phone text-nikaGold"></i> 085934242681
+
+                <!-- Contact Badges -->
+                <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-8 reveal stagger-4">
+                    <span class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium" style="background:rgba(28,37,65,0.6);border:1px solid rgba(148,163,184,0.1)">
+                        <i class="fa-solid fa-phone text-nikaGold text-xs"></i> 085934242681
                     </span>
-                    <span class="flex items-center gap-2 px-4 py-2 bg-nikaNavy/60 border border-slate-800 rounded-xl text-sm">
-                        <i class="fa-solid fa-envelope text-nikaGold"></i> denikurniii@gmail.com
+                    <span class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium" style="background:rgba(28,37,65,0.6);border:1px solid rgba(148,163,184,0.1)">
+                        <i class="fa-solid fa-envelope text-nikaGold text-xs"></i> denikurniii@gmail.com
+                    </span>
+                    <span class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium" style="background:rgba(28,37,65,0.6);border:1px solid rgba(148,163,184,0.1)">
+                        <i class="fa-solid fa-location-dot text-nikaGold text-xs"></i> Kudus, Jawa Tengah
                     </span>
                 </div>
-                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                    <a href="https://www.linkedin.com/in/deni-kurniawan-5bb5b8378" target="_blank" class="px-8 py-4 bg-gradient-to-r from-nikaGold to-amber-500 text-nikaDark font-extrabold rounded-2xl hover:shadow-[0_0_20px_rgba(251,191,36,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
-                        <i class="fa-brands fa-linkedin mr-2"></i> Connect on LinkedIn
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 reveal stagger-5">
+                    <a href="#projects" class="hero-btn-primary">
+                        <i class="fa-solid fa-code"></i> Lihat Projects Saya
                     </a>
-                    <a href="#experience" class="px-8 py-4 bg-nikaNavy hover:bg-slate-800 border border-slate-700 text-white font-bold rounded-2xl transition-all duration-300">
-                        Discover My Journey
+                    <a href="https://www.linkedin.com/in/deni-kurniawan-5bb5b8378" target="_blank" class="hero-btn-secondary">
+                        <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
                     </a>
+                </div>
+
+                <!-- Mini Stats -->
+                <div class="flex justify-center lg:justify-start gap-10 mt-12 pt-10 border-t reveal stagger-6" style="border-color:rgba(148,163,184,0.08)">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-label">Org Roles</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="8">0</span>
+                        <span class="stat-label">Certificates</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Internships</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="10">0</span>
+                        <span class="stat-label">Skills</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Visual Media (Photo container with Gear 5 Nika concept) -->
-            <div class="lg:col-span-5 flex justify-center relative">
-                <!-- Luffy Aura Background effect -->
-                <div class="absolute inset-0 bg-gradient-to-tr from-nikaGold/20 to-nikaRed/20 rounded-3xl blur-2xl transform rotate-6 scale-95 opacity-70"></div>
-                <!-- Dual Frame (Actual face & Luffy avatar transition) -->
-                <div class="relative w-72 h-[400px] md:w-80 md:h-[450px] bg-nikaNavy rounded-3xl p-3 border-2 border-slate-800 shadow-2xl transition-all duration-500 hover:border-nikaGold hover:scale-[1.02] group">
-                    <div class="relative w-full h-full rounded-2xl overflow-hidden bg-slate-950">
-                        <!-- Actual Photo -->
-                        <img src="assets/img/foto-kamu.jpeg" alt="Deni Kurniawan Profile" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 group-hover:opacity-0">
-                        <!-- Luffy Avatar (Hover) -->
-                        <img src="assets/img/luffyisdeni.jpg" alt="Deni Luffy Nika Gear 5 Mode" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-100 scale-105">
-                        
-                        <!-- Dynamic Label overlay -->
-                        <div class="absolute bottom-4 left-4 right-4 bg-nikaDark/95 backdrop-blur-md border border-slate-800 p-3.5 rounded-xl text-center">
-                            <p class="text-xs font-semibold text-white tracking-wide">Hover for Creative Vision ☀️</p>
+            <!-- Profile Card -->
+            <div class="lg:col-span-5 flex justify-center relative reveal-right">
+                <!-- Glow aura -->
+                <div class="absolute inset-0 rounded-3xl blur-3xl opacity-50" style="background:linear-gradient(135deg,rgba(251,191,36,0.2),rgba(239,68,68,0.15));transform:rotate(6deg) scale(0.95)"></div>
+
+                <div class="profile-card relative w-72 md:w-80" style="z-index:2">
+                    <div class="relative rounded-3xl overflow-hidden border-2 group" style="border-color:rgba(148,163,184,0.12);background:rgba(28,37,65,0.6);transition:border-color 0.3s ease" onmouseenter="this.style.borderColor='rgba(251,191,36,0.5)'" onmouseleave="this.style.borderColor='rgba(148,163,184,0.12)'">
+                        <!-- Photo -->
+                        <div class="relative h-96 overflow-hidden">
+                            <img src="assets/img/foto-kamu.jpeg" alt="Deni Kurniawan" class="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:opacity-0 group-hover:scale-105">
+                            <img src="assets/img/luffyisdeni.jpg" alt="Deni Luffy Mode" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-700 group-hover:opacity-100 scale-105 group-hover:scale-100">
+                            <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(11,19,43,0.9) 0%, transparent 50%)"></div>
                         </div>
+
+                        <!-- Info Overlay -->
+                        <div class="absolute bottom-0 left-0 right-0 p-5">
+                            <p class="text-white font-bold text-lg">Deni Kurniawan</p>
+                            <p class="text-nikaGold text-sm font-medium">Full-Stack Developer</p>
+                            <div class="flex gap-2 mt-3">
+                                <span class="px-2 py-0.5 rounded-md text-xs font-bold" style="background:rgba(251,191,36,0.15);color:#FBBF24;border:1px solid rgba(251,191,36,0.2)">PHP</span>
+                                <span class="px-2 py-0.5 rounded-md text-xs font-bold" style="background:rgba(59,130,246,0.15);color:#60a5fa;border:1px solid rgba(59,130,246,0.2)">Power BI</span>
+                                <span class="px-2 py-0.5 rounded-md text-xs font-bold" style="background:rgba(16,185,129,0.15);color:#34d399;border:1px solid rgba(16,185,129,0.2)">Python</span>
+                            </div>
+                            <p class="text-slate-500 text-xs mt-3">✨ Hover for secret mode</p>
+                        </div>
+                    </div>
+
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-4 -right-4 px-4 py-2 rounded-2xl font-bold text-sm shadow-xl" style="background:linear-gradient(135deg,#FBBF24,#f97316);color:#0B132B">
+                        <i class="fa-solid fa-code mr-1"></i> GenBI Awardee
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Professional Experience Section -->
-    <section id="experience" class="py-24 px-6 relative bg-nikaNavy/20 border-y border-slate-800/80">
+    <!-- =============================================
+         PROGRAMMING SKILLS SECTION
+         ============================================= -->
+    <section id="skills-tech" class="py-24 px-6 relative" style="background:rgba(28,37,65,0.15);border-top:1px solid rgba(148,163,184,0.06);border-bottom:1px solid rgba(148,163,184,0.06)">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-xs font-extrabold text-nikaGold uppercase tracking-widest mb-3">Professional Path</h2>
-                <h3 class="text-3xl md:text-5xl font-black text-white">Work Experience</h3>
-                <div class="w-16 h-1 bg-gradient-to-r from-nikaGold to-nikaRed mx-auto mt-4 rounded-full"></div>
+                <p class="section-label reveal">Technical Arsenal</p>
+                <h2 class="section-title reveal stagger-1">Programming Skills</h2>
+                <div class="section-divider reveal stagger-2"></div>
+                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm reveal stagger-3">
+                    Stack teknologi yang saya kuasai untuk membangun solusi digital yang efektif dan profesional.
+                </p>
             </div>
 
-            <div class="relative border-l border-slate-700 max-w-4xl mx-auto pl-8 md:pl-12 space-y-12">
-                <!-- BRI Intern -->
-                <div class="relative group">
-                    <!-- Dot Icon -->
-                    <div class="absolute -left-[41px] md:-left-[57px] top-1.5 w-6 h-6 rounded-full bg-nikaDark border-2 border-nikaGold flex items-center justify-center text-[10px] text-nikaGold shadow-lg group-hover:bg-nikaGold group-hover:text-nikaDark transition-all duration-300">
-                        <i class="fa-solid fa-briefcase"></i>
+            <!-- Tech Skills Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 mb-16">
+
+                <!-- PHP -->
+                <div class="skill-tech-card reveal stagger-1">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-php" style="color:#8892BF;font-size:2rem"></i>
                     </div>
-                    <div class="bg-nikaNavy/40 border border-slate-800/80 rounded-2xl p-6 md:p-8 hover:border-slate-700 hover:shadow-xl transition-all duration-300">
-                        <span class="px-3 py-1 bg-blue-600/20 text-blue-400 border border-blue-500/30 text-xs font-bold uppercase rounded-md">BUMN Internship</span>
-                        <h4 class="text-xl md:text-2xl font-bold text-white mt-3">Credit Administration Assistant</h4>
-                        <p class="text-nikaGold font-semibold mt-1">PT. Bank Rakyat Indonesia (Persero) Tbk. | Kudus Branch</p>
-                        <p class="text-slate-400 mt-4 leading-relaxed">
-                            Mempelajari ekosistem administrasi perbankan profesional, mengurus manajemen validasi dokumen kredit nasabah, dan mendukung efisiensi alur administrasi kantor unit. Melatih disiplin tinggi, ketelitian kerja, dan kepatuhan terhadap SOP operasional perbankan BUMN.
+                    <p class="text-white font-bold text-sm mb-1">PHP</p>
+                    <p class="text-slate-500 text-xs mb-2">Web Backend</p>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" data-width="80"></div>
+                    </div>
+                </div>
+
+                <!-- Power BI -->
+                <div class="skill-tech-card reveal stagger-2">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-solid fa-chart-bar" style="color:#F2C811;font-size:1.8rem"></i>
+                    </div>
+                    <p class="text-white font-bold text-sm mb-1">Power BI</p>
+                    <p class="text-slate-500 text-xs mb-2">Data Visualization</p>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" data-width="75"></div>
+                    </div>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-tech-card reveal stagger-3">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-python" style="color:#3B82F6;font-size:1.8rem"></i>
+                    </div>
+                    <p class="text-white font-bold text-sm mb-1">Python</p>
+                    <p class="text-slate-500 text-xs mb-2">Data & Scripting</p>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" data-width="70"></div>
+                    </div>
+                </div>
+
+                <!-- MySQL -->
+                <div class="skill-tech-card reveal stagger-4">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-solid fa-database" style="color:#00758F;font-size:1.8rem"></i>
+                    </div>
+                    <p class="text-white font-bold text-sm mb-1">MySQL</p>
+                    <p class="text-slate-500 text-xs mb-2">Database</p>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" data-width="78"></div>
+                    </div>
+                </div>
+
+                <!-- HTML/CSS -->
+                <div class="skill-tech-card reveal stagger-5">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-html5" style="color:#E34F26;font-size:1.8rem"></i>
+                    </div>
+                    <p class="text-white font-bold text-sm mb-1">HTML/CSS</p>
+                    <p class="text-slate-500 text-xs mb-2">Frontend</p>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" data-width="85"></div>
+                    </div>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill-tech-card reveal stagger-1">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-js" style="color:#F7DF1E;font-size:1.8rem"></i>
+                    </div>
+                    <p class="text-white font-bold text-sm mb-1">JavaScript</p>
+                    <p class="text-slate-500 text-xs mb-2">Frontend Logic</p>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" data-width="72"></div>
+                    </div>
+                </div>
+
+                <!-- Laravel -->
+                <div class="skill-tech-card reveal stagger-2">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-laravel" style="color:#FF2D20;font-size:1.8rem"></i>
+                    </div>
+                    <p class="text-white font-bold text-sm mb-1">Laravel</p>
+                    <p class="text-slate-500 text-xs mb-2">PHP Framework</p>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" data-width="65"></div>
+                    </div>
+                </div>
+
+                <!-- Microsoft Office -->
+                <div class="skill-tech-card reveal stagger-3">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-microsoft" style="color:#00A1F1;font-size:1.8rem"></i>
+                    </div>
+                    <p class="text-white font-bold text-sm mb-1">MS Office</p>
+                    <p class="text-slate-500 text-xs mb-2">MOS Certified</p>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" data-width="90"></div>
+                    </div>
+                </div>
+
+                <!-- Git -->
+                <div class="skill-tech-card reveal stagger-4">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-git-alt" style="color:#F05032;font-size:1.8rem"></i>
+                    </div>
+                    <p class="text-white font-bold text-sm mb-1">Git & GitHub</p>
+                    <p class="text-slate-500 text-xs mb-2">Version Control</p>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" data-width="73"></div>
+                    </div>
+                </div>
+
+                <!-- Figma -->
+                <div class="skill-tech-card reveal stagger-5">
+                    <div class="skill-icon-wrap">
+                        <i class="fa-brands fa-figma" style="color:#A259FF;font-size:1.8rem"></i>
+                    </div>
+                    <p class="text-white font-bold text-sm mb-1">Figma</p>
+                    <p class="text-slate-500 text-xs mb-2">UI/UX Design</p>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" data-width="68"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Skills Tags -->
+            <div class="text-center reveal">
+                <p class="text-slate-500 text-xs uppercase tracking-widest font-bold mb-4">Also familiar with</p>
+                <div class="flex flex-wrap justify-center gap-2">
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-semibold" style="background:rgba(28,37,65,0.6);border:1px solid rgba(148,163,184,0.1);color:#94a3b8">Bootstrap</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-semibold" style="background:rgba(28,37,65,0.6);border:1px solid rgba(148,163,184,0.1);color:#94a3b8">Tailwind CSS</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-semibold" style="background:rgba(28,37,65,0.6);border:1px solid rgba(148,163,184,0.1);color:#94a3b8">Excel Advanced</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-semibold" style="background:rgba(28,37,65,0.6);border:1px solid rgba(148,163,184,0.1);color:#94a3b8">Data Analysis</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-semibold" style="background:rgba(28,37,65,0.6);border:1px solid rgba(148,163,184,0.1);color:#94a3b8">Systems Analysis</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-semibold" style="background:rgba(28,37,65,0.6);border:1px solid rgba(148,163,184,0.1);color:#94a3b8">RESTful API</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-semibold" style="background:rgba(28,37,65,0.6);border:1px solid rgba(148,163,184,0.1);color:#94a3b8">SDLC</span>
+                    <span class="px-3 py-1.5 rounded-lg text-xs font-semibold" style="background:rgba(28,37,65,0.6);border:1px solid rgba(148,163,184,0.1);color:#94a3b8">Canva Pro</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         PROJECTS SECTION
+         ============================================= -->
+    <section id="projects" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="section-label reveal">My Work</p>
+                <h2 class="section-title reveal stagger-1">Portfolio Projects</h2>
+                <div class="section-divider reveal stagger-2"></div>
+                <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm reveal stagger-3">
+                    Kumpulan project yang saya kerjakan sebagai programmer — dari aplikasi web, sistem informasi, hingga analisis data.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 1: Sistem Informasi / Manajemen -->
+                <div class="project-card reveal stagger-1">
+                    <div class="project-thumb">
+                        <div class="w-full h-full flex items-center justify-center" style="background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(59,130,246,0.15))">
+                            <i class="fa-solid fa-database text-6xl" style="color:rgba(139,92,246,0.4)"></i>
+                        </div>
+                        <div class="project-thumb-overlay">
+                            <a href="https://drive.google.com/drive/folders/1FgkQ9ezx5o35zhNqP37u-nKJxm1f97MG?usp=sharing" target="_blank" class="flex items-center gap-2 px-5 py-2 rounded-full font-bold text-sm" style="background:linear-gradient(135deg,#FBBF24,#f97316);color:#0B132B">
+                                <i class="fa-solid fa-eye"></i> View Project
+                            </a>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="project-tag" style="background:rgba(139,92,246,0.2);color:#a78bfa;border:1px solid rgba(139,92,246,0.3)">PHP & MySQL</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Sistem Informasi Manajemen</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Aplikasi web berbasis PHP dan MySQL untuk mengelola data manajemen secara terintegrasi. Dilengkapi fitur CRUD, autentikasi user, dan dashboard laporan.
                         </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.1)">PHP</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.1)">MySQL</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.1)">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Power BI Dashboard -->
+                <div class="project-card reveal stagger-2">
+                    <div class="project-thumb">
+                        <div class="w-full h-full flex items-center justify-center" style="background:linear-gradient(135deg,rgba(242,200,17,0.2),rgba(251,146,60,0.15))">
+                            <i class="fa-solid fa-chart-line text-6xl" style="color:rgba(242,200,17,0.4)"></i>
+                        </div>
+                        <div class="project-thumb-overlay">
+                            <a href="https://drive.google.com/drive/folders/1FgkQ9ezx5o35zhNqP37u-nKJxm1f97MG?usp=sharing" target="_blank" class="flex items-center gap-2 px-5 py-2 rounded-full font-bold text-sm" style="background:linear-gradient(135deg,#FBBF24,#f97316);color:#0B132B">
+                                <i class="fa-solid fa-eye"></i> View Project
+                            </a>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="project-tag" style="background:rgba(242,200,17,0.15);color:#F2C811;border:1px solid rgba(242,200,17,0.25)">Power BI</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Business Intelligence Dashboard</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Dashboard analitik bisnis interaktif menggunakan Power BI. Menampilkan visualisasi data penjualan, KPI, dan trend bisnis secara real-time dengan data dari berbagai sumber.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.1)">Power BI</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.1)">DAX</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.1)">Excel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Web App -->
+                <div class="project-card reveal stagger-3">
+                    <div class="project-thumb">
+                        <div class="w-full h-full flex items-center justify-center" style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(59,130,246,0.15))">
+                            <i class="fa-solid fa-globe text-6xl" style="color:rgba(16,185,129,0.4)"></i>
+                        </div>
+                        <div class="project-thumb-overlay">
+                            <a href="https://drive.google.com/drive/folders/1FgkQ9ezx5o35zhNqP37u-nKJxm1f97MG?usp=sharing" target="_blank" class="flex items-center gap-2 px-5 py-2 rounded-full font-bold text-sm" style="background:linear-gradient(135deg,#FBBF24,#f97316);color:#0B132B">
+                                <i class="fa-solid fa-eye"></i> View Project
+                            </a>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="project-tag" style="background:rgba(16,185,129,0.15);color:#34d399;border:1px solid rgba(16,185,129,0.25)">Full Stack</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Web Application Development</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Pengembangan aplikasi web full-stack menggunakan Laravel framework. Fitur autentikasi, manajemen data, API integration, dan tampilan responsif dengan Tailwind CSS.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-0.5 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.1)">Laravel</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.1)">Tailwind</span>
+                            <span class="px-2 py-0.5 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.1)">REST API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Button -->
+            <div class="text-center mt-12 reveal">
+                <a href="https://drive.google.com/drive/folders/1FgkQ9ezx5o35zhNqP37u-nKJxm1f97MG?usp=sharing" target="_blank"
+                   class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-300 hover:scale-105"
+                   style="background:rgba(28,37,65,0.6);border:1px solid rgba(148,163,184,0.12);color:#e2e8f0">
+                    <i class="fa-brands fa-google-drive text-nikaGold"></i>
+                    Lihat Semua Project di Google Drive
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         PROFESSIONAL EXPERIENCE SECTION
+         ============================================= -->
+    <section id="experience" class="py-24 px-6 relative" style="background:rgba(28,37,65,0.15);border-top:1px solid rgba(148,163,184,0.06);border-bottom:1px solid rgba(148,163,184,0.06)">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="section-label reveal">Career Path</p>
+                <h2 class="section-title reveal stagger-1">Work Experience</h2>
+                <div class="section-divider reveal stagger-2"></div>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto pl-10 md:pl-16">
+                <!-- Timeline Line -->
+                <div class="timeline-line"></div>
+
+                <!-- BRI Internship -->
+                <div class="relative group mb-12 reveal">
+                    <div class="timeline-dot -left-[53px] md:-left-[69px]" style="background:#0B132B;border-color:#FBBF24;color:#FBBF24;top:28px">
+                        <i class="fa-solid fa-building-columns text-xs"></i>
+                    </div>
+                    <div class="glass-card p-6 md:p-8" style="transform:none">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                            <div>
+                                <span class="px-3 py-1 rounded-md text-xs font-bold uppercase" style="background:rgba(59,130,246,0.15);color:#60a5fa;border:1px solid rgba(59,130,246,0.2)">🏦 BUMN Internship</span>
+                                <h3 class="text-xl md:text-2xl font-bold text-white mt-3">Credit Administration Assistant</h3>
+                                <p class="text-nikaGold font-semibold mt-1 text-sm">PT. Bank Rakyat Indonesia (Persero) Tbk. — Kudus Branch</p>
+                            </div>
+                            <span class="text-xs font-mono text-slate-500 whitespace-nowrap">2025</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Mempelajari ekosistem administrasi perbankan profesional, mengurus validasi dokumen kredit nasabah, dan mendukung efisiensi alur administrasi kantor unit. Melatih disiplin tinggi, ketelitian kerja, dan kepatuhan terhadap SOP operasional perbankan BUMN.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.08)">Administrasi Kredit</span>
+                            <span class="px-2 py-1 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.08)">Validasi Dokumen</span>
+                            <span class="px-2 py-1 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.08)">SOP Perbankan</span>
+                            <span class="px-2 py-1 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.08)">Microsoft Office</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Prodeskel -->
-                <div class="relative group">
-                    <!-- Dot Icon -->
-                    <div class="absolute -left-[41px] md:-left-[57px] top-1.5 w-6 h-6 rounded-full bg-nikaDark border-2 border-slate-700 flex items-center justify-center text-[10px] text-slate-400 group-hover:border-nikaGold group-hover:text-nikaGold transition-all duration-300">
-                        <i class="fa-solid fa-briefcase"></i>
+                <div class="relative group mb-12 reveal stagger-1">
+                    <div class="timeline-dot -left-[53px] md:-left-[69px]" style="background:#0B132B;border-color:#475569;color:#64748b;top:28px">
+                        <i class="fa-solid fa-landmark text-xs"></i>
                     </div>
-                    <div class="bg-nikaNavy/40 border border-slate-800/80 rounded-2xl p-6 md:p-8 hover:border-slate-700 hover:shadow-xl transition-all duration-300">
-                        <span class="px-3 py-1 bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold uppercase rounded-md">Public Service</span>
-                        <h4 class="text-xl md:text-2xl font-bold text-white mt-3">Prodeskel Administrative Staff</h4>
-                        <p class="text-nikaGold font-semibold mt-1">Colo Village Office | 3 Months</p>
-                        <p class="text-slate-400 mt-4 leading-relaxed">
+                    <div class="glass-card p-6 md:p-8" style="transform:none">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                            <div>
+                                <span class="px-3 py-1 rounded-md text-xs font-bold uppercase" style="background:rgba(16,185,129,0.15);color:#34d399;border:1px solid rgba(16,185,129,0.2)">🏛️ Public Service</span>
+                                <h3 class="text-xl md:text-2xl font-bold text-white mt-3">Prodeskel Administrative Staff</h3>
+                                <p class="text-nikaGold font-semibold mt-1 text-sm">Colo Village Office — 3 Months</p>
+                            </div>
+                            <span class="text-xs font-mono text-slate-500 whitespace-nowrap">2024</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
                             Bertanggung jawab dalam pengelolaan data profil desa dan sistem kelurahan (Prodeskel). Melakukan input, pembaruan, dan validasi data kependudukan serta potensi wilayah Desa Colo untuk laporan terpadu ke tingkat kecamatan.
                         </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.08)">Data Entry</span>
+                            <span class="px-2 py-1 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.08)">Prodeskel System</span>
+                            <span class="px-2 py-1 rounded text-xs font-semibold" style="background:rgba(28,37,65,0.8);color:#64748b;border:1px solid rgba(148,163,184,0.08)">Administrasi Publik</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Ojek Muria -->
-                <div class="relative group">
-                    <!-- Dot Icon -->
-                    <div class="absolute -left-[41px] md:-left-[57px] top-1.5 w-6 h-6 rounded-full bg-nikaDark border-2 border-slate-700 flex items-center justify-center text-[10px] text-slate-400 group-hover:border-nikaGold group-hover:text-nikaGold transition-all duration-300">
-                        <i class="fa-solid fa-motorcycle"></i>
+                <div class="relative group reveal stagger-2">
+                    <div class="timeline-dot -left-[53px] md:-left-[69px]" style="background:#0B132B;border-color:#475569;color:#64748b;top:28px">
+                        <i class="fa-solid fa-motorcycle text-xs"></i>
                     </div>
-                    <div class="bg-nikaNavy/40 border border-slate-800/80 rounded-2xl p-6 md:p-8 hover:border-slate-700 hover:shadow-xl transition-all duration-300">
-                        <span class="px-3 py-1 bg-amber-600/20 text-amber-400 border border-amber-500/30 text-xs font-bold uppercase rounded-md">Gig Economy</span>
-                        <h4 class="text-xl md:text-2xl font-bold text-white mt-3">Ojek Muria Rider</h4>
-                        <p class="text-nikaGold font-semibold mt-1">Kudus (Gunung Muria Area)</p>
-                        <p class="text-slate-400 mt-4 leading-relaxed">
-                            Pengalaman berharga melayani transportasi lokal di daerah pegunungan Muria yang menantang. Mengasah navigasi wilayah, pemahaman rute ekstrem, komunikasi antarmasyarakat lokal dan wisatawan ziarah, serta melatih ketahanan fisik, kerja keras, dan kemandirian finansial.
+                    <div class="glass-card p-6 md:p-8" style="transform:none">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                            <div>
+                                <span class="px-3 py-1 rounded-md text-xs font-bold uppercase" style="background:rgba(251,191,36,0.15);color:#FBBF24;border:1px solid rgba(251,191,36,0.2)">🏍️ Gig Economy</span>
+                                <h3 class="text-xl md:text-2xl font-bold text-white mt-3">Ojek Muria Rider</h3>
+                                <p class="text-nikaGold font-semibold mt-1 text-sm">Kudus (Gunung Muria Area)</p>
+                            </div>
+                            <span class="text-xs font-mono text-slate-500 whitespace-nowrap">2023</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Pengalaman berharga melayani transportasi lokal di daerah pegunungan Muria. Mengasah navigasi, komunikasi lintas komunitas, dan melatih kemandirian finansial serta kerja keras.
                         </p>
                     </div>
                 </div>
@@ -199,274 +574,214 @@
         </div>
     </section>
 
-    <!-- Organizational Experience Section -->
+    <!-- =============================================
+         ORGANIZATION SECTION
+         ============================================= -->
     <section id="organization" class="py-24 px-6 relative">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-xs font-extrabold text-nikaGold uppercase tracking-widest mb-3">Leadership & Collaboration</h2>
-                <h3 class="text-3xl md:text-5xl font-black text-white">Organizations & Committees</h3>
-                <div class="w-16 h-1 bg-gradient-to-r from-nikaGold to-nikaRed mx-auto mt-4 rounded-full"></div>
+                <p class="section-label reveal">Leadership & Collaboration</p>
+                <h2 class="section-title reveal stagger-1">Organizations & Committees</h2>
+                <div class="section-divider reveal stagger-2"></div>
             </div>
 
-            <!-- Grid containing organization cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Org 1: Gathering Alumni -->
-                <div class="bg-nikaNavy/40 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-slate-700 hover:scale-[1.02] transition-all duration-300 group">
-                    <div class="relative h-56 overflow-hidden">
+                <!-- Org 1 -->
+                <div class="glass-card overflow-hidden group reveal stagger-1" style="padding:0">
+                    <div class="relative h-52 overflow-hidden">
                         <img src="assets/img/gatheringku.jpeg" alt="Gathering Alumni UMK Broadcasting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-nikaDark via-transparent to-transparent"></div>
-                        <span class="absolute bottom-4 left-4 px-3 py-1 bg-nikaGold text-nikaDark text-xs font-extrabold uppercase rounded-full">Chairman</span>
+                        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(11,19,43,0.95) 0%, transparent 60%)"></div>
+                        <span class="absolute bottom-4 left-4 px-3 py-1 rounded-full text-xs font-extrabold uppercase" style="background:linear-gradient(135deg,#FBBF24,#f97316);color:#0B132B">Chairman</span>
                     </div>
                     <div class="p-6">
-                        <h4 class="text-lg font-bold text-white mb-2">Gathering Alumni UMK Broadcasting</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Memimpin kepanitiaan acara temu kangen dan sharing alumni UMK Broadcasting. Bertanggung jawab atas koordinasi divisi, penyusunan agenda acara, dan memastikan silaturahmi antargenerasi berjalan lancar dan sukses.
-                        </p>
+                        <h4 class="text-base font-bold text-white mb-2">Gathering Alumni UMK Broadcasting</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Memimpin kepanitiaan acara temu kangen dan sharing alumni UMK Broadcasting. Koordinasi divisi, penyusunan agenda, dan silaturahmi antargenerasi.</p>
                     </div>
                 </div>
 
-                <!-- Org 2: Lomba Akademisi Sekolah Lasis -->
-                <div class="bg-nikaNavy/40 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-slate-700 hover:scale-[1.02] transition-all duration-300 group">
-                    <div class="relative h-56 overflow-hidden">
+                <!-- Org 2 -->
+                <div class="glass-card overflow-hidden group reveal stagger-2" style="padding:0">
+                    <div class="relative h-52 overflow-hidden">
                         <img src="assets/img/himasi1.jpeg" alt="Lomba Akademisi Sekolah Lasis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-nikaDark via-transparent to-transparent"></div>
-                        <span class="absolute bottom-4 left-4 px-3 py-1 bg-nikaGold text-nikaDark text-xs font-extrabold uppercase rounded-full">Chief Organizer</span>
+                        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(11,19,43,0.95) 0%, transparent 60%)"></div>
+                        <span class="absolute bottom-4 left-4 px-3 py-1 rounded-full text-xs font-extrabold uppercase" style="background:linear-gradient(135deg,#FBBF24,#f97316);color:#0B132B">Chief Organizer</span>
                     </div>
                     <div class="p-6">
-                        <h4 class="text-lg font-bold text-white mb-2">Lomba Akademisi Sekolah Lasis (HIMASI)</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Ketua pelaksana event kompetisi akademis sekolah Lasis yang dinaungi oleh HIMASI. Mengoordinasikan seluruh panitia mulai dari perancangan soal, publikasi, pendaftaran peserta, hingga eksekusi acara hari H.
-                        </p>
+                        <h4 class="text-base font-bold text-white mb-2">Lomba Akademisi Sekolah Lasis (HIMASI)</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Ketua pelaksana event kompetisi akademis sekolah Lasis yang dinaungi oleh HIMASI. Dari perancangan soal hingga eksekusi acara hari H.</p>
                     </div>
                 </div>
 
-                <!-- Org 3: UKM UMK Broadcasting -->
-                <div class="bg-nikaNavy/40 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-slate-700 hover:scale-[1.02] transition-all duration-300 group">
-                    <div class="relative h-56 overflow-hidden">
-                        <img src="assets/img/fullormawaub.jpeg" alt="UKM UMK Broadcasting 2026" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-nikaDark via-transparent to-transparent"></div>
-                        <span class="absolute bottom-4 left-4 px-3 py-1 bg-nikaGold text-nikaDark text-xs font-extrabold uppercase rounded-full">HRD Member (2026)</span>
+                <!-- Org 3 -->
+                <div class="glass-card overflow-hidden group reveal stagger-3" style="padding:0">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="assets/img/fullormawaub.jpeg" alt="UKM UMK Broadcasting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(11,19,43,0.95) 0%, transparent 60%)"></div>
+                        <span class="absolute bottom-4 left-4 px-3 py-1 rounded-full text-xs font-extrabold uppercase" style="background:linear-gradient(135deg,#FBBF24,#f97316);color:#0B132B">HRD Member</span>
                     </div>
                     <div class="p-6">
-                        <h4 class="text-lg font-bold text-white mb-2">UKM UMK Broadcasting</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Sebagai bagian dari divisi Human Resource Development (HRD). Berfokus pada pengembangan kualitas internal anggota ukm, mengadakan screening, evaluasi berkala, serta menyusun program upgrading anggota.
-                        </p>
+                        <h4 class="text-base font-bold text-white mb-2">UKM UMK Broadcasting</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Divisi Human Resource Development (HRD). Berfokus pada pengembangan kualitas internal anggota, screening, evaluasi berkala, dan program upgrading.</p>
                     </div>
                 </div>
 
-                <!-- Org 4: Himapro SI -->
-                <div class="bg-nikaNavy/40 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-slate-700 hover:scale-[1.02] transition-all duration-300 group">
-                    <div class="relative h-56 overflow-hidden">
+                <!-- Org 4 -->
+                <div class="glass-card overflow-hidden group reveal stagger-1" style="padding:0">
+                    <div class="relative h-52 overflow-hidden">
                         <img src="assets/img/himasi.jpeg" alt="Himapro SI" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-nikaDark via-transparent to-transparent"></div>
-                        <span class="absolute bottom-4 left-4 px-3 py-1 bg-nikaGold text-nikaDark text-xs font-extrabold uppercase rounded-full">External Relations</span>
+                        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(11,19,43,0.95) 0%, transparent 60%)"></div>
+                        <span class="absolute bottom-4 left-4 px-3 py-1 rounded-full text-xs font-extrabold uppercase" style="background:linear-gradient(135deg,#FBBF24,#f97316);color:#0B132B">External Relations</span>
                     </div>
                     <div class="p-6">
-                        <h4 class="text-lg font-bold text-white mb-2">Himapro Sistem Informasi (HIMASI)</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Aktif sebagai staf divisi hubungan luar. Menghubungkan himpunan mahasiswa dengan instansi luar, universitas lain, serta menginisiasi kolaborasi program kerja kunjungan industri maupun studi banding.
-                        </p>
+                        <h4 class="text-base font-bold text-white mb-2">Himapro Sistem Informasi (HIMASI)</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Staf divisi hubungan luar. Menghubungkan himpunan mahasiswa dengan instansi, universitas lain, dan menginisiasi kolaborasi program kerja.</p>
                     </div>
                 </div>
 
-                <!-- Org 5: Ormawa Fakultas Teknik -->
-                <div class="bg-nikaNavy/40 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-slate-700 hover:scale-[1.02] transition-all duration-300 group">
-                    <div class="relative h-56 overflow-hidden">
+                <!-- Org 5 -->
+                <div class="glass-card overflow-hidden group reveal stagger-2" style="padding:0">
+                    <div class="relative h-52 overflow-hidden">
                         <img src="assets/img/ormawateknik.jpeg" alt="Ormawa Fakultas Teknik" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-nikaDark via-transparent to-transparent"></div>
-                        <span class="absolute bottom-4 left-4 px-3 py-1 bg-nikaGold text-nikaDark text-xs font-extrabold uppercase rounded-full">Active Member</span>
+                        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(11,19,43,0.95) 0%, transparent 60%)"></div>
+                        <span class="absolute bottom-4 left-4 px-3 py-1 rounded-full text-xs font-extrabold uppercase" style="background:linear-gradient(135deg,#FBBF24,#f97316);color:#0B132B">Active Member</span>
                     </div>
                     <div class="p-6">
-                        <h4 class="text-lg font-bold text-white mb-2">Fakultas Teknik Representative</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Terlibat aktif dalam berbagai kegiatan organisasi mahasiswa (Ormawa) di lingkup Fakultas Teknik UMK. Mengawal isu akademis, berpartisipasi dalam event olahraga dan pengabdian masyarakat fakultas.
-                        </p>
+                        <h4 class="text-base font-bold text-white mb-2">Fakultas Teknik Representative</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Aktif dalam Ormawa Fakultas Teknik UMK. Mengawal isu akademis, event olahraga, dan pengabdian masyarakat fakultas.</p>
                     </div>
                 </div>
 
-                <!-- Talent SI / Tim Promosi -->
-                <div class="bg-nikaNavy/40 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-slate-700 hover:scale-[1.02] transition-all duration-300 group flex flex-col justify-between">
-                    <div class="p-6 h-full flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="px-3 py-1 bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-bold uppercase rounded-md">Talent Team</span>
-                                <i class="fa-brands fa-instagram text-2xl text-nikaGold"></i>
-                            </div>
-                            <h4 class="text-lg font-bold text-white mb-2">Sistem Informasi Promotion Talent</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                Menjadi talent utama dan tim promosi program studi Sistem Informasi UMK. Membuat konten kreatif seputar perkuliahan, tips teknologi, dan mempromosikan prodi melalui platform sosial media Instagram & TikTok.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between">
-                            <span class="text-xs text-slate-500">Instagram Channel</span>
-                            <a href="https://www.instagram.com/denikurniii/?hl=en" target="_blank" class="text-sm font-semibold text-nikaGold hover:underline flex items-center gap-1">
-                                @denikurniii <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                            </a>
-                        </div>
+                <!-- Org 6: Social Media Talent -->
+                <div class="glass-card reveal stagger-3" style="background:rgba(28,37,65,0.4)">
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="px-3 py-1 rounded-md text-xs font-bold uppercase" style="background:rgba(251,191,36,0.1);color:#FBBF24;border:1px solid rgba(251,191,36,0.2)">Talent Team</span>
+                        <i class="fa-brands fa-instagram text-2xl text-nikaGold"></i>
+                    </div>
+                    <h4 class="text-base font-bold text-white mb-2">Sistem Informasi Promotion Talent</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-5">
+                        Menjadi talent utama dan tim promosi Program Studi Sistem Informasi UMK. Konten kreatif melalui Instagram & TikTok.
+                    </p>
+                    <div class="pt-4 border-t flex items-center justify-between" style="border-color:rgba(148,163,184,0.07)">
+                        <span class="text-xs text-slate-500">Instagram Channel</span>
+                        <a href="https://www.instagram.com/denikurniii/?hl=en" target="_blank" class="text-sm font-bold text-nikaGold hover:underline flex items-center gap-1">
+                            @denikurniii <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Achievements Section (GenBI Beasiswa BI) -->
-    <section id="achievements" class="py-24 px-6 relative bg-nikaNavy/20 border-y border-slate-800/80">
+    <!-- =============================================
+         SOFT SKILLS SHOWCASE
+         ============================================= -->
+    <section id="soft-skills" class="py-24 px-6 relative" style="background:rgba(28,37,65,0.15);border-top:1px solid rgba(148,163,184,0.06);border-bottom:1px solid rgba(148,163,184,0.06)">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-xs font-extrabold text-nikaGold uppercase tracking-widest mb-3">Distinguished Honors</h2>
-                <h3 class="text-3xl md:text-5xl font-black text-white">Achievements</h3>
-                <div class="w-16 h-1 bg-gradient-to-r from-nikaGold to-nikaRed mx-auto mt-4 rounded-full"></div>
+                <p class="section-label reveal">Capabilities</p>
+                <h2 class="section-title reveal stagger-1">Soft Skill Strengths</h2>
+                <div class="section-divider reveal stagger-2"></div>
             </div>
 
-            <!-- Double-image display for Bank Indonesia Scholarship -->
-            <div class="bg-nikaNavy/40 border border-slate-800/80 rounded-3xl p-6 md:p-12 max-w-5xl mx-auto hover:border-nikaGold transition-colors duration-300">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <span class="px-3.5 py-1.5 bg-nikaGold/10 border border-nikaGold/30 text-nikaGold text-xs font-extrabold uppercase rounded-full tracking-wider">Scholarship Awardee</span>
-                        <h4 class="text-2xl md:text-4xl font-extrabold text-white mt-4 mb-3">Bank Indonesia Scholarship 2026</h4>
-                        <h5 class="text-lg font-bold text-slate-300 mb-4">Generasi Baru Indonesia (GenBI) Solo</h5>
-                        <p class="text-slate-400 leading-relaxed mb-6">
-                            Terpilih menjadi salah satu penerima beasiswa prestasi eksklusif dari Bank Indonesia Kantor Perwakilan Solo tahun 2026. Aktif berkontribusi dalam komunitas penerima beasiswa (GenBI) untuk menyelenggarakan program edukasi kebijakan Bank Indonesia, sosialisasi QRIS/Rupiah, serta berbagai aksi sosial kemasyarakatan.
-                        </p>
-                        <div class="flex flex-wrap gap-4">
-                            <span class="px-4 py-2 bg-slate-900 border border-slate-800 rounded-xl text-sm font-semibold text-slate-300 flex items-center gap-2">
-                                <i class="fa-solid fa-award text-nikaGold"></i> BI Solo Member
-                            </span>
-                            <span class="px-4 py-2 bg-slate-900 border border-slate-800 rounded-xl text-sm font-semibold text-slate-300 flex items-center gap-2">
-                                <i class="fa-solid fa-users-gear text-nikaGold"></i> Community Leader
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Images Display -->
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="rounded-2xl overflow-hidden border border-slate-800 h-64 hover:scale-[1.03] transition-transform duration-300">
-                            <img src="assets/img/bi.jpeg" alt="Deni Bank Indonesia Awardee" class="w-full h-full object-cover">
-                        </div>
-                        <div class="rounded-2xl overflow-hidden border border-slate-800 h-64 hover:scale-[1.03] transition-transform duration-300 mt-6 lg:mt-12">
-                            <img src="assets/img/bisolo.jpeg" alt="GenBI Solo Community" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Soft Skills Showcase & MC Gallery -->
-    <section id="skills" class="py-24 px-6 relative">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-xs font-extrabold text-nikaGold uppercase tracking-widest mb-3">Capabilities</h2>
-                <h3 class="text-3xl md:text-5xl font-black text-white">Soft Skill Strengths</h3>
-                <div class="w-16 h-1 bg-gradient-to-r from-nikaGold to-nikaRed mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <!-- Soft skill cards with custom grid layout -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-                <!-- Skill 1: MC Public Speaking -->
-                <div class="bg-nikaNavy/40 border border-slate-800/80 rounded-2xl p-8 hover:border-nikaGold transition-all duration-300">
-                    <div class="w-12 h-12 rounded-2xl bg-nikaGold/10 border border-nikaGold/25 flex items-center justify-center text-2xl text-nikaGold mb-6">
+                <div class="soft-skill-card reveal stagger-1">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-6" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:#FBBF24">
                         <i class="fa-solid fa-microphone-lines"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3">MC & Public Speaking</h4>
                     <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Ahli dalam memandu event formal maupun non-formal. Memiliki karisma berbicara di atas panggung, mengelola audiens dengan baik, serta menguasai teknik vokal yang artikulatif dan fleksibel.
+                        Ahli dalam memandu event formal maupun non-formal. Karisma berbicara di atas panggung, mengelola audiens, dan menguasai teknik vokal yang artikulatif.
                     </p>
-                    <span class="text-xs font-semibold px-2.5 py-1 bg-nikaGold/10 text-nikaGold border border-nikaGold/20 rounded-md">Featured Strength</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-bold" style="background:rgba(251,191,36,0.08);color:#FBBF24;border:1px solid rgba(251,191,36,0.15)">Featured Strength</span>
                 </div>
 
-                <!-- Skill 2: Leadership -->
-                <div class="bg-nikaNavy/40 border border-slate-800/80 rounded-2xl p-8 hover:border-nikaGold transition-all duration-300">
-                    <div class="w-12 h-12 rounded-2xl bg-nikaGold/10 border border-nikaGold/25 flex items-center justify-center text-2xl text-nikaGold mb-6">
+                <div class="soft-skill-card reveal stagger-2">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-6" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:#FBBF24">
                         <i class="fa-solid fa-users"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3">Organized Leadership</h4>
                     <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Tercermin dari rekam jejak memimpin kepanitiaan penting (Broadcasting Gathering & Lomba Akademisi). Mampu membimbing tim, mendelegasikan tugas secara adil, dan menyelesaikan konflik dengan kepala dingin.
+                        Rekam jejak memimpin kepanitiaan penting (Broadcasting Gathering & Lomba Akademisi). Mendelegasikan tugas secara adil dan menyelesaikan konflik dengan kepala dingin.
                     </p>
-                    <span class="text-xs font-semibold px-2.5 py-1 bg-nikaGold/10 text-nikaGold border border-nikaGold/20 rounded-md">Management</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-bold" style="background:rgba(251,191,36,0.08);color:#FBBF24;border:1px solid rgba(251,191,36,0.15)">Management</span>
                 </div>
 
-                <!-- Skill 3: Problem Solving -->
-                <div class="bg-nikaNavy/40 border border-slate-800/80 rounded-2xl p-8 hover:border-nikaGold transition-all duration-300">
-                    <div class="w-12 h-12 rounded-2xl bg-nikaGold/10 border border-nikaGold/25 flex items-center justify-center text-2xl text-nikaGold mb-6">
+                <div class="soft-skill-card reveal stagger-3">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-6" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:#FBBF24">
                         <i class="fa-solid fa-brain"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3">Analytical Problem Solving</h4>
                     <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Mengombinasikan logika sistem informasi dengan pengalaman organisasi taktis. Cepat memetakan masalah operasional di lapangan dan merancang solusi alternatif yang efektif dan efisien.
+                        Mengombinasikan logika sistem informasi dengan pengalaman taktis. Cepat memetakan masalah operasional dan merancang solusi yang efektif.
                     </p>
-                    <span class="text-xs font-semibold px-2.5 py-1 bg-nikaGold/10 text-nikaGold border border-nikaGold/20 rounded-md">Analytical</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-bold" style="background:rgba(251,191,36,0.08);color:#FBBF24;border:1px solid rgba(251,191,36,0.15)">Analytical</span>
                 </div>
             </div>
 
-            <!-- Speaker / MC Gallery Section -->
-            <div class="border border-slate-800/80 bg-nikaNavy/20 rounded-3xl p-6 md:p-10">
+            <!-- MC / Speaker Gallery -->
+            <div class="rounded-3xl p-6 md:p-10" style="background:rgba(28,37,65,0.3);border:1px solid rgba(148,163,184,0.07)">
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
                     <div>
                         <h4 class="text-2xl font-bold text-white">MC / Speaker Gallery</h4>
-                        <p class="text-slate-400 text-sm mt-1">Daftar dokumentasi panggung formal dan non-formal pilihan</p>
+                        <p class="text-slate-400 text-sm mt-1">Dokumentasi panggung formal dan non-formal pilihan</p>
                     </div>
                     <div class="flex gap-2">
-                        <button id="prev-slide" class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:border-nikaGold hover:text-nikaGold transition-colors" aria-label="Previous">
+                        <button id="prev-slide" class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 transition-all hover:text-nikaGold" style="border:1px solid rgba(148,163,184,0.15)" aria-label="Previous">
                             <i class="fa-solid fa-chevron-left"></i>
                         </button>
-                        <button id="next-slide" class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:border-nikaGold hover:text-nikaGold transition-colors" aria-label="Next">
+                        <button id="next-slide" class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 transition-all hover:text-nikaGold" style="border:1px solid rgba(148,163,184,0.15)" aria-label="Next">
                             <i class="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Horizontal Slide Container -->
-                <div id="gallery-slider" class="flex gap-6 overflow-x-auto pb-4 scroll-smooth scrollbar-thin scrollbar-thumb-slate-800">
-                    <!-- Photo cards -->
-                    <div class="min-w-[240px] md:min-w-[280px] h-96 rounded-2xl overflow-hidden border border-slate-800 relative group cursor-pointer" onclick="openLightbox('assets/img/speaker1.jpeg')">
-                        <img src="assets/img/speaker1.jpeg" alt="MC Frame 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-nikaDark/80 via-transparent to-transparent flex items-end p-4">
-                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i> Click to Zoom</span>
+                <div id="gallery-slider" class="flex gap-5 overflow-x-auto pb-3">
+                    <div class="min-w-[240px] md:min-w-[260px] h-80 rounded-2xl overflow-hidden relative group cursor-pointer flex-shrink-0" onclick="openLightbox('assets/img/speaker1.jpeg')" style="border:1px solid rgba(148,163,184,0.08)">
+                        <img src="assets/img/speaker1.jpeg" alt="MC Frame 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108">
+                        <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top,rgba(11,19,43,0.8),transparent 50%)">
+                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i>Click to Zoom</span>
                         </div>
                     </div>
-                    <div class="min-w-[240px] md:min-w-[280px] h-96 rounded-2xl overflow-hidden border border-slate-800 relative group cursor-pointer" onclick="openLightbox('assets/img/speaker2.jpeg')">
+                    <div class="min-w-[240px] md:min-w-[260px] h-80 rounded-2xl overflow-hidden relative group cursor-pointer flex-shrink-0" onclick="openLightbox('assets/img/speaker2.jpeg')" style="border:1px solid rgba(148,163,184,0.08)">
                         <img src="assets/img/speaker2.jpeg" alt="MC Frame 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-nikaDark/80 via-transparent to-transparent flex items-end p-4">
-                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i> Click to Zoom</span>
+                        <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top,rgba(11,19,43,0.8),transparent 50%)">
+                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i>Click to Zoom</span>
                         </div>
                     </div>
-                    <div class="min-w-[240px] md:min-w-[280px] h-96 rounded-2xl overflow-hidden border border-slate-800 relative group cursor-pointer" onclick="openLightbox('assets/img/speaker3.jpeg')">
+                    <div class="min-w-[240px] md:min-w-[260px] h-80 rounded-2xl overflow-hidden relative group cursor-pointer flex-shrink-0" onclick="openLightbox('assets/img/speaker3.jpeg')" style="border:1px solid rgba(148,163,184,0.08)">
                         <img src="assets/img/speaker3.jpeg" alt="MC Frame 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-nikaDark/80 via-transparent to-transparent flex items-end p-4">
-                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i> Click to Zoom</span>
+                        <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top,rgba(11,19,43,0.8),transparent 50%)">
+                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i>Click to Zoom</span>
                         </div>
                     </div>
-                    <div class="min-w-[240px] md:min-w-[280px] h-96 rounded-2xl overflow-hidden border border-slate-800 relative group cursor-pointer" onclick="openLightbox('assets/img/speaker4.jpeg')">
+                    <div class="min-w-[240px] md:min-w-[260px] h-80 rounded-2xl overflow-hidden relative group cursor-pointer flex-shrink-0" onclick="openLightbox('assets/img/speaker4.jpeg')" style="border:1px solid rgba(148,163,184,0.08)">
                         <img src="assets/img/speaker4.jpeg" alt="MC Frame 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-nikaDark/80 via-transparent to-transparent flex items-end p-4">
-                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i> Click to Zoom</span>
+                        <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top,rgba(11,19,43,0.8),transparent 50%)">
+                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i>Click to Zoom</span>
                         </div>
                     </div>
-                    <div class="min-w-[240px] md:min-w-[280px] h-96 rounded-2xl overflow-hidden border border-slate-800 relative group cursor-pointer" onclick="openLightbox('assets/img/speaker5.jpeg')">
+                    <div class="min-w-[240px] md:min-w-[260px] h-80 rounded-2xl overflow-hidden relative group cursor-pointer flex-shrink-0" onclick="openLightbox('assets/img/speaker5.jpeg')" style="border:1px solid rgba(148,163,184,0.08)">
                         <img src="assets/img/speaker5.jpeg" alt="MC Frame 5" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-nikaDark/80 via-transparent to-transparent flex items-end p-4">
-                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i> Click to Zoom</span>
+                        <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top,rgba(11,19,43,0.8),transparent 50%)">
+                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i>Click to Zoom</span>
                         </div>
                     </div>
-                    <div class="min-w-[240px] md:min-w-[280px] h-96 rounded-2xl overflow-hidden border border-slate-800 relative group cursor-pointer" onclick="openLightbox('assets/img/speaker6.jpeg')">
+                    <div class="min-w-[240px] md:min-w-[260px] h-80 rounded-2xl overflow-hidden relative group cursor-pointer flex-shrink-0" onclick="openLightbox('assets/img/speaker6.jpeg')" style="border:1px solid rgba(148,163,184,0.08)">
                         <img src="assets/img/speaker6.jpeg" alt="MC Frame 6" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-nikaDark/80 via-transparent to-transparent flex items-end p-4">
-                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i> Click to Zoom</span>
+                        <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top,rgba(11,19,43,0.8),transparent 50%)">
+                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i>Click to Zoom</span>
                         </div>
                     </div>
-                    <div class="min-w-[240px] md:min-w-[280px] h-96 rounded-2xl overflow-hidden border border-slate-800 relative group cursor-pointer" onclick="openLightbox('assets/img/speaker7.jpeg')">
+                    <div class="min-w-[240px] md:min-w-[260px] h-80 rounded-2xl overflow-hidden relative group cursor-pointer flex-shrink-0" onclick="openLightbox('assets/img/speaker7.jpeg')" style="border:1px solid rgba(148,163,184,0.08)">
                         <img src="assets/img/speaker7.jpeg" alt="MC Frame 7" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-nikaDark/80 via-transparent to-transparent flex items-end p-4">
-                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i> Click to Zoom</span>
+                        <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top,rgba(11,19,43,0.8),transparent 50%)">
+                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i>Click to Zoom</span>
                         </div>
                     </div>
-                    <div class="min-w-[240px] md:min-w-[280px] h-96 rounded-2xl overflow-hidden border border-slate-800 relative group cursor-pointer" onclick="openLightbox('assets/img/speaker8.jpeg')">
+                    <div class="min-w-[240px] md:min-w-[260px] h-80 rounded-2xl overflow-hidden relative group cursor-pointer flex-shrink-0" onclick="openLightbox('assets/img/speaker8.jpeg')" style="border:1px solid rgba(148,163,184,0.08)">
                         <img src="assets/img/speaker8.jpeg" alt="MC Frame 8" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-nikaDark/80 via-transparent to-transparent flex items-end p-4">
-                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i> Click to Zoom</span>
+                        <div class="absolute inset-0 flex items-end p-4" style="background:linear-gradient(to top,rgba(11,19,43,0.8),transparent 50%)">
+                            <span class="text-xs text-nikaGold uppercase font-bold tracking-widest"><i class="fa-solid fa-magnifying-glass-plus mr-1.5"></i>Click to Zoom</span>
                         </div>
                     </div>
                 </div>
@@ -474,54 +789,268 @@
         </div>
     </section>
 
-    <!-- Social Connection Hub -->
-    <section class="py-16 px-6 bg-nikaNavy/40 border-t border-slate-800/80 relative z-10 text-center">
+    <!-- =============================================
+         ACHIEVEMENTS & CERTIFICATIONS SECTION (TABBED)
+         ============================================= -->
+    <section id="achievements" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <p class="section-label reveal">Distinguished Honors</p>
+                <h2 class="section-title reveal stagger-1">Achievements & Certifications</h2>
+                <div class="section-divider reveal stagger-2"></div>
+            </div>
+
+            <!-- Tab Toggle -->
+            <div class="tab-container reveal stagger-3">
+                <button class="tab-btn active" onclick="switchTab('achievements-panel', this)" id="tab-achievements">
+                    🏆 Achievements
+                </button>
+                <button class="tab-btn" onclick="switchTab('certifications-panel', this)" id="tab-certifications">
+                    📜 Certifications
+                </button>
+            </div>
+
+            <!-- ===== TAB 1: ACHIEVEMENTS ===== -->
+            <div id="achievements-panel" class="tab-panel active">
+                <!-- Bank Indonesia Scholarship -->
+                <div class="glass-card p-6 md:p-12 max-w-5xl mx-auto mb-12" style="border-color:rgba(251,191,36,0.15)">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <span class="px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest" style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.25);color:#FBBF24">🎓 Scholarship Awardee</span>
+                            <h4 class="text-2xl md:text-3xl font-extrabold text-white mt-4 mb-2">Bank Indonesia Scholarship 2026</h4>
+                            <h5 class="text-base font-bold text-slate-300 mb-4">Generasi Baru Indonesia (GenBI) Solo</h5>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Terpilih menjadi penerima beasiswa prestasi eksklusif dari Bank Indonesia Kantor Perwakilan Solo tahun 2026. Aktif berkontribusi dalam komunitas GenBI untuk edukasi kebijakan BI, sosialisasi QRIS/Rupiah, dan aksi sosial kemasyarakatan.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold" style="background:rgba(11,19,43,0.8);border:1px solid rgba(148,163,184,0.1)">
+                                    <i class="fa-solid fa-award text-nikaGold"></i> BI Solo Member
+                                </span>
+                                <span class="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold" style="background:rgba(11,19,43,0.8);border:1px solid rgba(148,163,184,0.1)">
+                                    <i class="fa-solid fa-users-gear text-nikaGold"></i> Community Leader
+                                </span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="rounded-2xl overflow-hidden h-56 hover:scale-105 transition-transform duration-300 cursor-pointer" style="border:1px solid rgba(148,163,184,0.1)" onclick="openLightbox('assets/img/bi.jpeg')">
+                                <img src="assets/img/bi.jpeg" alt="Bank Indonesia Awardee" class="w-full h-full object-cover">
+                            </div>
+                            <div class="rounded-2xl overflow-hidden h-56 hover:scale-105 transition-transform duration-300 cursor-pointer mt-8" style="border:1px solid rgba(148,163,184,0.1)" onclick="openLightbox('assets/img/bisolo.jpeg')">
+                                <img src="assets/img/bisolo.jpeg" alt="GenBI Solo Community" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sertifikat Official: MS Office + BRI Magang -->
+                <div class="max-w-5xl mx-auto">
+                    <h4 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6 text-center">Official Certificates</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Sertifikat 1: Microsoft Office Specialist -->
+                        <div class="cert-card" onclick="openLightbox('assets/img/sertifikat 1.png')">
+                            <div class="cert-img-wrap">
+                                <img src="assets/img/sertifikat 1.png" alt="Sertifikat Microsoft Office Specialist">
+                                <div class="cert-img-overlay">
+                                    <span class="text-white font-bold text-sm flex items-center gap-2 px-4 py-2 rounded-full" style="background:rgba(251,191,36,0.9);color:#0B132B">
+                                        <i class="fa-solid fa-expand"></i> Lihat Penuh
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-brands fa-microsoft text-blue-400"></i>
+                                    <span class="text-xs font-bold uppercase tracking-widest text-blue-400">Official Certification</span>
+                                </div>
+                                <h4 class="text-base font-bold text-white mb-1">Microsoft Office Specialist (MOS)</h4>
+                                <p class="text-slate-400 text-xs">Sertifikat resmi pelatihan & kompetensi Microsoft Office dari Microsoft Corporation.</p>
+                            </div>
+                        </div>
+
+                        <!-- Sertifikat 2: Magang BRI -->
+                        <div class="cert-card" onclick="openLightbox('assets/img/sertifikat 2.png')">
+                            <div class="cert-img-wrap">
+                                <img src="assets/img/sertifikat 2.png" alt="Sertifikat Magang BRI">
+                                <div class="cert-img-overlay">
+                                    <span class="text-white font-bold text-sm flex items-center gap-2 px-4 py-2 rounded-full" style="background:rgba(251,191,36,0.9);color:#0B132B">
+                                        <i class="fa-solid fa-expand"></i> Lihat Penuh
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-building-columns text-nikaGold"></i>
+                                    <span class="text-xs font-bold uppercase tracking-widest text-nikaGold">Official Internship</span>
+                                </div>
+                                <h4 class="text-base font-bold text-white mb-1">Sertifikat Magang — PT. BRI (Persero) Tbk.</h4>
+                                <p class="text-slate-400 text-xs">Sertifikat resmi magang di PT. Bank Rakyat Indonesia sebagai Credit Administration Assistant.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== TAB 2: CERTIFICATIONS ===== -->
+            <div id="certifications-panel" class="tab-panel">
+                <div class="max-w-5xl mx-auto">
+                    <p class="text-center text-slate-400 text-sm mb-10">Sertifikat pelatihan, kepemimpinan, dan pengembangan diri yang telah dicapai.</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                        <!-- LKMM TD -->
+                        <div class="cert-card" onclick="openLightbox('assets/img/SERTIF LKMMTD 202453023.png')">
+                            <div class="cert-img-wrap">
+                                <img src="assets/img/SERTIF LKMMTD 202453023.png" alt="Sertifikat LKMM TD">
+                                <div class="cert-img-overlay">
+                                    <span class="text-white font-bold text-sm flex items-center gap-2 px-4 py-2 rounded-full" style="background:rgba(251,191,36,0.9);color:#0B132B"><i class="fa-solid fa-expand"></i> Zoom</span>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <span class="text-xs font-bold uppercase tracking-widest" style="color:#a78bfa">Leadership Training</span>
+                                <h4 class="text-sm font-bold text-white mt-1 mb-1">LKMM Tingkat Dasar (TD)</h4>
+                                <p class="text-slate-500 text-xs">Pelatihan Keterampilan Manajemen Mahasiswa Tingkat Dasar — fondasi kepemimpinan organisasi.</p>
+                            </div>
+                        </div>
+
+                        <!-- LKMM PD -->
+                        <div class="cert-card" onclick="openLightbox('assets/img/LKMM PD DENI.png')">
+                            <div class="cert-img-wrap">
+                                <img src="assets/img/LKMM PD DENI.png" alt="Sertifikat LKMM PD">
+                                <div class="cert-img-overlay">
+                                    <span class="text-white font-bold text-sm flex items-center gap-2 px-4 py-2 rounded-full" style="background:rgba(251,191,36,0.9);color:#0B132B"><i class="fa-solid fa-expand"></i> Zoom</span>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <span class="text-xs font-bold uppercase tracking-widest" style="color:#a78bfa">Leadership Training</span>
+                                <h4 class="text-sm font-bold text-white mt-1 mb-1">LKMM Pra Dasar (PD)</h4>
+                                <p class="text-slate-500 text-xs">Pelatihan Keterampilan Manajemen Mahasiswa tingkat Pra Dasar — pengenalan potensi diri.</p>
+                            </div>
+                        </div>
+
+                        <!-- LKMM TM -->
+                        <div class="cert-card" onclick="openLightbox('assets/img/Sertifikat LKMM TM - Deni Kurniawan.jpeg')">
+                            <div class="cert-img-wrap">
+                                <img src="assets/img/Sertifikat LKMM TM - Deni Kurniawan.jpeg" alt="Sertifikat LKMM TM">
+                                <div class="cert-img-overlay">
+                                    <span class="text-white font-bold text-sm flex items-center gap-2 px-4 py-2 rounded-full" style="background:rgba(251,191,36,0.9);color:#0B132B"><i class="fa-solid fa-expand"></i> Zoom</span>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <span class="text-xs font-bold uppercase tracking-widest" style="color:#34d399">Leadership Training</span>
+                                <h4 class="text-sm font-bold text-white mt-1 mb-1">LKMM Tingkat Menengah (TM)</h4>
+                                <p class="text-slate-500 text-xs">Pelatihan Keterampilan Manajemen Mahasiswa Tingkat Menengah — pengembangan lanjutan.</p>
+                            </div>
+                        </div>
+
+                        <!-- Sertifikat Pemateri I -->
+                        <div class="cert-card" onclick="openLightbox('assets/img/Sertifikat Pemateri I - Deni Kurniawan.jpeg')">
+                            <div class="cert-img-wrap">
+                                <img src="assets/img/Sertifikat Pemateri I - Deni Kurniawan.jpeg" alt="Sertifikat Pemateri I">
+                                <div class="cert-img-overlay">
+                                    <span class="text-white font-bold text-sm flex items-center gap-2 px-4 py-2 rounded-full" style="background:rgba(251,191,36,0.9);color:#0B132B"><i class="fa-solid fa-expand"></i> Zoom</span>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <span class="text-xs font-bold uppercase tracking-widest text-nikaGold">Speaker</span>
+                                <h4 class="text-sm font-bold text-white mt-1 mb-1">Sertifikat Pemateri I</h4>
+                                <p class="text-slate-500 text-xs">Pengakuan sebagai pemateri/narasumber dalam kegiatan seminar atau pelatihan formal.</p>
+                            </div>
+                        </div>
+
+                        <!-- Sertifikat Pemateri II -->
+                        <div class="cert-card" onclick="openLightbox('assets/img/Sertifikat Pemateri II - Deni Kurniawan.jpeg')">
+                            <div class="cert-img-wrap">
+                                <img src="assets/img/Sertifikat Pemateri II - Deni Kurniawan.jpeg" alt="Sertifikat Pemateri II">
+                                <div class="cert-img-overlay">
+                                    <span class="text-white font-bold text-sm flex items-center gap-2 px-4 py-2 rounded-full" style="background:rgba(251,191,36,0.9);color:#0B132B"><i class="fa-solid fa-expand"></i> Zoom</span>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <span class="text-xs font-bold uppercase tracking-widest text-nikaGold">Speaker</span>
+                                <h4 class="text-sm font-bold text-white mt-1 mb-1">Sertifikat Pemateri II</h4>
+                                <p class="text-slate-500 text-xs">Sertifikat narasumber kedua dalam kegiatan seminar / pelatihan publik berbeda.</p>
+                            </div>
+                        </div>
+
+                        <!-- LKMMTM lkmmtm.jpeg -->
+                        <div class="cert-card" onclick="openLightbox('assets/img/lkmmtm.jpeg')">
+                            <div class="cert-img-wrap">
+                                <img src="assets/img/lkmmtm.jpeg" alt="LKMM TM Foto">
+                                <div class="cert-img-overlay">
+                                    <span class="text-white font-bold text-sm flex items-center gap-2 px-4 py-2 rounded-full" style="background:rgba(251,191,36,0.9);color:#0B132B"><i class="fa-solid fa-expand"></i> Zoom</span>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <span class="text-xs font-bold uppercase tracking-widest" style="color:#60a5fa">Documentation</span>
+                                <h4 class="text-sm font-bold text-white mt-1 mb-1">LKMM Tingkat Menengah — Foto</h4>
+                                <p class="text-slate-500 text-xs">Dokumentasi kegiatan LKMM TM bersama peserta dan fasilitator.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         CONTACT / SOCIAL HUB
+         ============================================= -->
+    <section class="py-20 px-6 relative z-10 text-center" style="background:rgba(28,37,65,0.3);border-top:1px solid rgba(148,163,184,0.06);border-bottom:1px solid rgba(148,163,184,0.06)">
         <div class="max-w-4xl mx-auto">
-            <h4 class="text-2xl font-extrabold text-white mb-3">Get In Touch Directly!</h4>
-            <p class="text-slate-400 text-sm mb-8">Feel free to connect for events, mc bookings, or tech discussion.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://wa.me/6285934242681" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold rounded-xl transition-all duration-300">
+            <div class="reveal">
+                <p class="section-label mb-3">Let's Connect</p>
+                <h3 class="text-3xl md:text-4xl font-black text-white mb-3">Get In Touch!</h3>
+                <p class="text-slate-400 text-sm mb-10">Feel free to reach out for events, MC bookings, collaboration, or tech discussions.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 reveal stagger-1">
+                <a href="https://wa.me/6285934242681" target="_blank" class="contact-btn" style="background:#25D366;color:white">
                     <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
                 </a>
-                <a href="https://www.instagram.com/denikurniii/?hl=en" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-[#E1306C] hover:bg-[#C13584] text-white font-bold rounded-xl transition-all duration-300">
+                <a href="https://www.instagram.com/denikurniii/?hl=en" target="_blank" class="contact-btn" style="background:linear-gradient(135deg,#E1306C,#C13584);color:white">
                     <i class="fa-brands fa-instagram text-lg"></i> Instagram
                 </a>
-                <a href="https://www.tiktok.com/@deniiiiik?_r=1&_t=ZS-92x3Q0n8r5w" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-[#000000] hover:bg-slate-900 border border-slate-800 text-white font-bold rounded-xl transition-all duration-300">
+                <a href="https://www.tiktok.com/@deniiiiik?_r=1&_t=ZS-92x3Q0n8r5w" target="_blank" class="contact-btn" style="background:#111;border:1px solid rgba(255,255,255,0.1);color:white">
                     <i class="fa-brands fa-tiktok text-lg"></i> TikTok
                 </a>
-                <a href="https://www.linkedin.com/in/deni-kurniawan-5bb5b8378" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-[#0077B5] hover:bg-[#0077B5]/80 text-white font-bold rounded-xl transition-all duration-300">
+                <a href="https://www.linkedin.com/in/deni-kurniawan-5bb5b8378" target="_blank" class="contact-btn" style="background:#0077B5;color:white">
                     <i class="fa-brands fa-linkedin text-lg"></i> LinkedIn
                 </a>
-                <a href="https://github.com/denikurniii3" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-slate-900 border border-slate-800 hover:border-slate-600 text-white font-bold rounded-xl transition-all duration-300">
+                <a href="https://github.com/denikurniii3" target="_blank" class="contact-btn" style="background:rgba(28,37,65,0.8);border:1px solid rgba(148,163,184,0.15);color:white">
                     <i class="fa-brands fa-github text-lg"></i> GitHub
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 bg-nikaDark border-t border-slate-900 text-center">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-slate-500 text-sm">© 2026 Deni Kurniawan. All rights reserved.</p>
-            <div class="flex gap-6 text-xl text-slate-500">
-                <a href="https://github.com/denikurniii3" class="hover:text-nikaGold transition"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/deni-kurniawan-5bb5b8378" class="hover:text-nikaGold transition"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/denikurniii/?hl=en" class="hover:text-nikaGold transition"><i class="fa-brands fa-instagram"></i></a>
+    <!-- =============================================
+         FOOTER
+         ============================================= -->
+    <footer class="py-10 text-center" style="background:#060c1a;border-top:1px solid rgba(148,163,184,0.05)">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-5">
+            <div class="text-left">
+                <p class="text-gradient font-extrabold text-lg tracking-tight">DENI KURNIAWAN</p>
+                <p class="text-slate-600 text-xs mt-1">Full-Stack Developer & IS Analyst</p>
+            </div>
+            <p class="text-slate-600 text-xs">© 2026 Deni Kurniawan. All rights reserved. Built with ❤️</p>
+            <div class="flex gap-5 text-slate-600 text-lg">
+                <a href="https://github.com/denikurniii3" class="hover:text-nikaGold transition-colors"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/deni-kurniawan-5bb5b8378" class="hover:text-nikaGold transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/denikurniii/?hl=en" class="hover:text-nikaGold transition-colors"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- Fullscreen Lightbox Modal for Gallery Images -->
-    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white/70 hover:text-white text-3xl focus:outline-none" aria-label="Close Lightbox">
+    <!-- =============================================
+         LIGHTBOX MODAL
+         ============================================= -->
+    <div id="lightbox" onclick="closeLightboxOutside(event)">
+        <button onclick="closeLightbox()" class="absolute top-5 right-5 text-white/70 hover:text-white text-3xl focus:outline-none z-10" aria-label="Close">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        <div class="max-w-4xl max-h-[85vh] overflow-hidden rounded-xl border border-slate-800 bg-nikaNavy">
-            <img id="lightbox-img" src="" alt="Fullscreen view" class="max-w-full max-h-[80vh] object-contain">
-        </div>
+        <img id="lightbox-img" src="" alt="Fullscreen view">
     </div>
 
-    <!-- Main JavaScript Logic -->
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
